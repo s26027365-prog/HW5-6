@@ -1,0 +1,9 @@
+-- database: /home/sun/mount3_2/db/todo.db
+
+SELECT * FROM tasks;
+
+
+INSERT INTO tasks (task) VALUES ('zadacha');
+
+
+UPDATE tasks SET task = 'Another' WHERE id = 1;
