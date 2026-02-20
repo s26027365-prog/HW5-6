@@ -34,6 +34,8 @@ def main(page: ft.Page):
 
         def change_completed(e):
             main_db.set_completed(task_id, checkbox.value)
+            task_text.color = ft.Colors.GREEN if checkbox.value else None
+            page.update()
 
         checkbox = ft.Checkbox(
             value=bool(completed),
@@ -44,7 +46,8 @@ def main(page: ft.Page):
             value=task,
             expand=True,
             read_only=True,
-            on_submit=edit
+            on_submit=edit,
+            color=ft.Colors.GREEN if completed else None
         )
 
         task_row = ft.Row([
@@ -90,4 +93,4 @@ def main(page: ft.Page):
 
 if __name__ == "__main__":
     main_db.create_tables()
-    ft.run(main, view=ft.AppView.WEB_BROWSER)
+    ft.run(main)

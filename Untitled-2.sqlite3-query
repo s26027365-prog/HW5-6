@@ -1,0 +1,5 @@
+-- database: /home/sun/mount3_2/db/todo.db
+
+SELECT * FROM tasks;
+
+
